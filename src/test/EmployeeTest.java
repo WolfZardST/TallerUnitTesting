@@ -21,6 +21,17 @@ public class EmployeeTest {
 	}
 	
 	/**
+	 * Validando método cs() en el escenario de un Supervisor que cobra 6500.0 USD.
+	 * bonusPercentage: 0.2
+	 * Valor esperado: 6564.403333
+	 */
+	@Test
+	public void CsUSDSupervisor() {
+		employee = new Employee((float) 6500.0, "USD", (float) 0.2, EmployeeType.Supervisor);
+		assertEquals( 6564.403333, employee.cs() , 0.001);
+	}
+	
+	/**
 	 * Validando método cs() en el escenario de un Worker que cobra 3500.0 EUR.
 	 * bonusPercentage: 0.4
 	 * Valor esperado: 3389.333333
