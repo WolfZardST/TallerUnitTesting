@@ -10,7 +10,19 @@ public class EmployeeTest {
 	private Employee employee;
 
 	/**
+	 * Validando método cs() en el escenario de un Worker que cobra 785.13 USD. 
+	 * bonusPercentage: 0.3
+	 * Valor esperado: 849.463333
+	 */
+	@Test
+	public void CsUSDWorker() {
+		employee = new Employee(785.13f, "USD", 0.3f, EmployeeType.Worker);
+		assertEquals( 849.463333, employee.cs() , 0.001);
+	}
+	
+	/**
 	 * Validando método cs() en el escenario de un Worker que cobra 3500.0 EUR.
+	 * bonusPercentage: 0.4
 	 * Valor esperado: 3389.333333
 	 */
 	@Test
@@ -21,6 +33,7 @@ public class EmployeeTest {
 	
 	/**
 	 * Validando método cs() en el escenario de un Supervisor que cobra 6500.0 EUR.
+	 * bonusPercentage: 0.2
 	 * Valor esperado: 6239.403333
 	 */
 	@Test
@@ -31,6 +44,7 @@ public class EmployeeTest {
 	
 	/**
 	 * Validando método cs() en el escenario de un Manager que cobra 10000.0 EUR.
+	 * bonusPercentage: 0.1
 	 * Valor esperado: 9564.403333
 	 */
 	@Test
@@ -44,7 +58,7 @@ public class EmployeeTest {
 	 * Valor esperado: 386.00
 	 */
 	@Test
-	public void CalculateYearBonusUSDWorkerTest() {
+	public void CalculateYearBonusUSDWorker() {
 		employee = new Employee(500.18F, "USD", 100F, EmployeeType.Worker);
 		assertEquals(employee.CalculateYearBonus(), 386F, 0.001);
 	}
@@ -54,7 +68,7 @@ public class EmployeeTest {
 	 * Valor esperado: 1646.72
 	 */
 	@Test
-	public void CalculateYearBonusUSDSupervisorTest() {
+	public void CalculateYearBonusUSDSupervisor() {
 		employee = new Employee(1453.72F, "USD", 100F, EmployeeType.Supervisor);
 		assertEquals(employee.CalculateYearBonus(), 1646.72F, 0.001);
 	}
@@ -64,7 +78,7 @@ public class EmployeeTest {
 	 * Valor esperado: 6892.63
 	 */
 	@Test
-	public void CalculateYearBonusUSDManagerTest() {
+	public void CalculateYearBonusUSDManager() {
 		employee = new Employee(6506.63F, "USD", 100F, EmployeeType.Manager);
 		assertEquals(employee.CalculateYearBonus(), 6892.63F, 0.001);
 	}
