@@ -29,10 +29,11 @@ public class EmployeeTest {
 	@After
 	public void tearDown() throws Exception {
 	}
-<<<<<<< HEAD
 
 	@Ignore
-=======
+	public void test() {
+		fail("Not yet implemented");
+	}
 	
 	@Test
 	public void CsEURWorker() {
@@ -41,7 +42,6 @@ public class EmployeeTest {
 		
 	}
 	
->>>>>>> c4f7043d43f310b1c520c269a0c8f634c59f0fe6
 	@Test
 	public void CsEURSupervisor() {
 		Employee employee = new Employee((float) 6500.0, "EUR", (float) 0.2, EmployeeType.Supervisor);
@@ -56,11 +56,6 @@ public class EmployeeTest {
 		
 	}
 
-	@Ignore
-	public void test() {
-		fail("Not yet implemented");
-	}
-	
 	@Test
 	public void CalculateYearBonusEURWorker() {
 		Employee worker = new Employee(500.23F, "EUR", 0.05F, EmployeeType.Worker);
